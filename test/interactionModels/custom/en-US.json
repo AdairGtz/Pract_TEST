@@ -1,0 +1,113 @@
+{
+  "interactionModel": {
+    "dialog": {
+      "intents": [
+        {
+          "slots": [
+            {
+              "name": "respuesta",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Intent-QuizIntent.Slot-respuesta"
+              }
+            }
+          ],
+          "name": "QuizIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "slots": [],
+          "name": "HelloWorldIntent",
+          "samples": [
+            "hello",
+            "how are you",
+            "say hello world",
+            "say hello",
+            "Hello World"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "respuesta",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "name": "QuizIntent",
+          "samples": [
+            "my answer is {respuesta}",
+            "the answer is {respuesta}",
+            "the {respuesta}"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.PauseIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ResumeIntent",
+          "samples": []
+        },
+        {
+          "slots": [],
+          "name": "StartGameIntent",
+          "samples": [
+            "start game"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "answerIndex",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "name": "AnswerIntent",
+          "samples": [
+            "the {answerIndex}",
+            "the answer is {answerIndex}",
+            "option {answerIndex}",
+            "choose {answerIndex}"
+          ]
+        }
+      ],
+      "types": [],
+      "invocationName": "general culture"
+    },
+    "prompts": [
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please enter your answer."
+          }
+        ],
+        "id": "Elicit.Intent-QuizIntent.Slot-respuesta"
+      }
+    ]
+  }
+}
